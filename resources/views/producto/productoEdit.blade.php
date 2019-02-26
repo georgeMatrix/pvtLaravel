@@ -30,22 +30,23 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                {!! Form::select('provedor', 'Selecciona el provedor') !!}
+                                {!! Form::select('provedor', $provedor, null, ['class' => 'form-control', 'placeholder' => 'selecciona un provedor']) !!}
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                {!! Form::select('categoria', 'Selecciona la categoria') !!}
+                                {!! Form::select('categoria', $categoria, null, ['class' => 'form-control', 'placeholder' => 'selecciona un categoria']) !!}
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                {!! Form::select('descripcion', 'Selecciona la descripcion') !!}
+                                {!! Form::label('descripcion', 'Escribe el skuVnpk') !!}
+                                {!! Form::text('descripcion', null, ['class'=>'form-control']) !!}
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                {!! Form::select('unidad_medida', 'Selecciona la unidad de medida') !!}
+                                {!! Form::select('unidad_Medida', $unidadMedida, null, ['class' => 'form-control', 'placeholder' => 'selecciona una unidad de medida']) !!}
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -80,74 +81,74 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                {!! Form::label('precio_mayoreo', 'Escribe el precio mayoreo') !!}
-                                {!! Form::text('precio_mayoreo', null, ['class'=>'form-control']) !!}
+                                {!! Form::label('precio_Mayoreo', 'Escribe el precio mayoreo') !!}
+                                {!! Form::text('precio_Mayoreo', null, ['class'=>'form-control']) !!}
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                {!! Form::label('iva_precio_mayoreo', 'Escribe el iva precio mayoreo') !!}
-                                {!! Form::text('iva_precio_mayoreo', null, ['class'=>'form-control']) !!}
+                                {!! Form::label('iva_Precio_Mayoreo', 'Escribe el iva precio mayoreo') !!}
+                                {!! Form::text('iva_Precio_Mayoreo', null, ['class'=>'form-control']) !!}
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                {!! Form::label('ieps_precio_mayoreo', 'Escribe el ieps precio mayoreo') !!}
-                                {!! Form::text('ieps_precio_mayoreo', null, ['class'=>'form-control']) !!}
+                                {!! Form::label('ieps_Precio_Mayoreo', 'Escribe el ieps precio mayoreo') !!}
+                                {!! Form::text('ieps_Precio_Mayoreo', null, ['class'=>'form-control']) !!}
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                {!! Form::label('total_precio_mayoreo', 'Escribe el total precio mayoreo') !!}
-                                {!! Form::text('total_precio_mayoreo', null, ['class'=>'form-control']) !!}
+                                {!! Form::label('total_Precio_Mayoreo', 'Escribe el total precio mayoreo') !!}
+                                {!! Form::text('total_Precio_Mayoreo', null, ['class'=>'form-control']) !!}
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                {!! Form::label('precio_medio_mayoreo', 'Escribe el precio medio mayoreo') !!}
-                                {!! Form::text('precio_medio_mayoreo', null, ['class'=>'form-control']) !!}
+                                {!! Form::label('precio_Medio_Mayoreo', 'Escribe el precio medio mayoreo') !!}
+                                {!! Form::text('precio_Medio_Mayoreo', null, ['class'=>'form-control']) !!}
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                {!! Form::label('iva_precio_medio_mayoreo', 'Escribe el precio iva precio medio mayoreo') !!}
-                                {!! Form::text('iva_precio_medio_mayoreo', null, ['class'=>'form-control']) !!}
+                                {!! Form::label('iva_Precio_Medio_Mayoreo', 'Escribe el precio iva precio medio mayoreo') !!}
+                                {!! Form::text('iva_Precio_Medio_Mayoreo', null, ['class'=>'form-control']) !!}
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                {!! Form::label('ieps_precio_medio_mayoreo', 'Escribe el precio ieps precio medio mayoreo') !!}
-                                {!! Form::text('ieps_precio_medio_mayoreo', null, ['class'=>'form-control']) !!}
+                                {!! Form::label('ieps_Precio_Medio_Mayoreo', 'Escribe el precio ieps precio medio mayoreo') !!}
+                                {!! Form::text('ieps_Precio_Medio_Mayoreo', null, ['class'=>'form-control']) !!}
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                {!! Form::label('total_precio_medio_mayoreo', 'Escribe el total precio medio mayoreo') !!}
-                                {!! Form::text('total_precio_medio_mayoreo', null, ['class'=>'form-control']) !!}
+                                {!! Form::label('total_Precio_Medio_Mayoreo', 'Escribe el total precio medio mayoreo') !!}
+                                {!! Form::text('total_Precio_Medio_Mayoreo', null, ['class'=>'form-control']) !!}
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                {!! Form::label('precio_retail', 'Escribe el precio retail') !!}
-                                {!! Form::text('precio_retail', null, ['class'=>'form-control']) !!}
+                                {!! Form::label('precio_Retail', 'Escribe el precio retail') !!}
+                                {!! Form::text('precio_Retail', null, ['class'=>'form-control']) !!}
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                {!! Form::label('iva_precio_retail', 'Escribe el iva precio retail') !!}
-                                {!! Form::text('iva_precio_retail', null, ['class'=>'form-control']) !!}
+                                {!! Form::label('iva_Precio_Retail', 'Escribe el iva precio retail') !!}
+                                {!! Form::text('iva_Precio_Retail', null, ['class'=>'form-control']) !!}
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                {!! Form::label('ieps_precio_retail', 'Escribe el ieps precio retail') !!}
-                                {!! Form::text('ieps_precio_retail', null, ['class'=>'form-control']) !!}
+                                {!! Form::label('ieps_Precio_Retail', 'Escribe el ieps precio retail') !!}
+                                {!! Form::text('ieps_Precio_Retail', null, ['class'=>'form-control']) !!}
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                {!! Form::label('total_precio_retail', 'Escribe el total precio retail') !!}
-                                {!! Form::text('total_precio_retail', null, ['class'=>'form-control']) !!}
+                                {!! Form::label('total_Precio_Retail', 'Escribe el total precio retail') !!}
+                                {!! Form::text('total_Precio_Retail', null, ['class'=>'form-control']) !!}
                             </div>
                         </div>
                         <div class="col-md-6">

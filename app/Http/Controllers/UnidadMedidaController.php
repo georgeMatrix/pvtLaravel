@@ -14,7 +14,8 @@ class UnidadMedidaController extends Controller
      */
     public function index()
     {
-        //
+        $unidadMedida = UnidadMedida::all();
+        return view('unidadMedida/unidadMedidaIndex')->with('unidadMedida', $unidadMedida);
     }
 
     /**
@@ -24,7 +25,7 @@ class UnidadMedidaController extends Controller
      */
     public function create()
     {
-        //
+        return view('unidadMedida/unidadMedidaEdit');
     }
 
     /**
@@ -35,7 +36,12 @@ class UnidadMedidaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $unidadMedida = new UnidadMedida();
+        $unidadMedida->nombre = $request->nombre;
+        $unidadMedida->descripcion = $request->descripcion;
+        $unidadMedida->decimal = $request->decimal;
+        $unidadMedida->save();
+        return redirect()->route('unidadMedida.index');
     }
 
     /**

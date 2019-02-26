@@ -50,7 +50,7 @@
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="{{route('provedor.index')}}">Provedor</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item">Unidad de Medida</a>
+                        <a class="dropdown-item" href="{{route('unidadMedida.index')}}">Unidad de Medida</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="{{route('producto.index')}}">Producto</a>
                     </div>

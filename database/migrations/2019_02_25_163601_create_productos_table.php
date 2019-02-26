@@ -20,7 +20,7 @@ class CreateProductosTable extends Migration
             $table->string('skuVnpk');
             $table->unsignedInteger('provedor');
             $table->unsignedInteger('categoria');
-            $table->unsignedInteger('descripcion');
+            $table->string('descripcion');
             $table->string('descripcionE');
             $table->string('costo');
             $table->string('iva_costo');

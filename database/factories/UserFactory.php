@@ -56,7 +56,7 @@ $factory->define(App\Producto::class, function (Faker $faker) {
         'skuVnpk' => $faker -> name,
         'provedor' => $faker -> biasedNumberBetween(1,5),
         'categoria' => $faker -> biasedNumberBetween(1,5),
-        'descripcion' => $faker -> biasedNumberBetween(1,5),
+        'descripcion' => $faker -> name,
         'descripcionE' => $faker -> name,
         'costo' => $faker -> name,
         'iva_costo' => $faker -> name,
