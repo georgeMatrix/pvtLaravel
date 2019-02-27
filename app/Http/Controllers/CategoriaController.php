@@ -49,9 +49,10 @@ class CategoriaController extends Controller
      * @param  \App\Categoria  $categoria
      * @return \Illuminate\Http\Response
      */
-    public function show(Categoria $categoria)
+    public function show($id)
     {
-        //
+        $categoria = Categoria::find($id);
+        return view('categoria/categoriaEdit')->with('categoria', $categoria);
     }
 
     /**

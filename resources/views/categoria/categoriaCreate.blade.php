@@ -8,23 +8,23 @@
                     <p class="card-category">Completa los campos</p>
                 </div>
                 <div class="card-body">
-                    {!! Form::model($categoria, ['route' => ['categoria.update', $categoria->id], 'method' => 'PUT']) !!}
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                {!! Form::label('nombre', 'Escribe el nombre de la categoria') !!}
-                                {!! Form::text('nombre', null, ['class'=>'form-control']) !!}
+                    {!! Form::open(['route' => 'categoria.store', 'method' => 'post']) !!}
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    {!! Form::label('nombre', 'Escribe el nombre de la categoria') !!}
+                                    {!! Form::text('nombre', null, ['class'=>'form-control']) !!}
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    {!! Form::label('descripcion', 'Escribe una descripcion') !!}
+                                    {!! Form::text('descripcion', null, ['class'=>'form-control']) !!}
+                                </div>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                {!! Form::label('descripcion', 'Escribe una descripcion') !!}
-                                {!! Form::text('descripcion', null, ['class'=>'form-control']) !!}
-                            </div>
-                        </div>
-                    </div>
                     {!! Form::submit('Guardar', ['class' => 'btn btn-primary pull-right']) !!}
-                    <div class="clearfix"></div>
+                        <div class="clearfix"></div>
                     {!! Form::close() !!}
                 </div>
             </div>
@@ -47,4 +47,4 @@
             </div>
         </div>
     </div>
-@endsection
+    @endsection

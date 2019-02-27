@@ -16,6 +16,9 @@
                         <th>
                             <b>Descripcion</b>
                         </th>
+                        <th>
+                            <b>Editar</b>
+                        </th>
                         </thead>
                         <tbody>
                         @foreach($categorias as $categoria)
@@ -25,6 +28,9 @@
                             </td>
                             <td>
                                 {{$categoria->descripcion}}
+                            </td>
+                            <td>
+                                <a href="{{route('categoria.show', $categoria->id)}}" class="btn btn-primary">Editar</a>
                             </td>
                         </tr>
                         @endforeach
