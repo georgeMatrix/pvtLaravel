@@ -81,9 +81,13 @@ class ProductoController extends Controller
      * @param  \App\Producto  $producto
      * @return \Illuminate\Http\Response
      */
-    public function show(Producto $producto)
+    public function show($id)
     {
-        //
+        $producto = Producto::find($id);
+        $provedor = Provedor::pluck('nombre', 'id');
+        $categoria = Categoria::pluck('nombre', 'id');
+        $unidadMedida = UnidadMedida::pluck('nombre', 'id');
+        return view('producto.productoEdit')->with('producto', $producto)->with('provedor', $provedor)->with('categoria', $categoria)->with('unidadMedida', $unidadMedida);
     }
 
     /**
@@ -104,9 +108,36 @@ class ProductoController extends Controller
      * @param  \App\Producto  $producto
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Producto $producto)
+    public function update(Request $request, $id)
     {
-        //
+        $producto = Producto::find($id);
+        $producto->clave = $request->clave;
+        $producto->sku = $request->sku;
+        $producto->skuVnpk = $request->skuVnpk;
+        $producto->provedor = $request->provedor;
+        $producto->categoria = $request->categoria;
+        $producto->descripcion = $request->descripcion;
+        $producto->descripcionE = $request->descripcionE;
+        $producto->costo = $request->costo;
+        $producto->iva_costo = $request->iva_costo;
+        $producto->ieps_costo = $request->ieps_costo;
+        $producto->total_costo = $request->total_costo;
+        $producto->precio_Mayoreo = $request->precio_Mayoreo;
+        $producto->iva_Precio_Mayoreo = $request->iva_Precio_Mayoreo;
+        $producto->ieps_Precio_Mayoreo = $request->ieps_Precio_Mayoreo;
+        $producto->total_Precio_Mayoreo = $request->total_Precio_Mayoreo;
+        $producto->precio_Medio_Mayoreo = $request->precio_Medio_Mayoreo;
+        $producto->iva_Precio_Medio_Mayoreo = $request->iva_Precio_Medio_Mayoreo;
+        $producto->ieps_Precio_Medio_Mayoreo = $request->ieps_Precio_Medio_Mayoreo;
+        $producto->total_Precio_Medio_Mayoreo = $request->total_Precio_Medio_Mayoreo;
+        $producto->precio_Retail = $request->precio_Retail;
+        $producto->iva_Precio_Retail = $request->iva_Precio_Retail;
+        $producto->ieps_Precio_Retail = $request->ieps_Precio_Retail;
+        $producto->total_Precio_Retail = $request->total_Precio_Retail;
+        $producto->existencia = $request->existencia;
+        $producto->unidad_Medida = $request->unidad_Medida;
+        $producto->save();
+        return redirect()->route('producto.index');
     }
 
     /**

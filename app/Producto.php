@@ -34,14 +34,14 @@ class Producto extends Model
         'unidad_Medida',
     ];
     public function provedorF(){
-        return $this->belongsTo(Provedor::class, 'id');
+        return $this->belongsTo(Provedor::class, 'provedor');
     }
 
     public function categoriaF(){
-        return $this->belongsTo(Categoria::class, 'id');
+        return $this->belongsTo(Categoria::class, 'categoria');
     }
 
     public function unidad_MedidaF(){
-        return $this->belongsTo(UnidadMedida::class, 'id');
+        return $this->belongsTo(UnidadMedida::class, 'unidad_Medida');
     }
 }

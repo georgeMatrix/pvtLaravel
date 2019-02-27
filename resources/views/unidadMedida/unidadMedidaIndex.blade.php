@@ -19,6 +19,9 @@
                         <th>
                             <b>Decimal</b>
                         </th>
+                        <th>
+                            <b>Editar</b>
+                        </th>
 
                         </thead>
                         <tbody>
@@ -32,6 +35,9 @@
                                 </td>
                                 <td>
                                     {{$unidadM->Decimal}}
+                                </td>
+                                <td>
+                                    <a href="{{route('unidadMedida.show', $unidadM->id)}}" class="btn btn-primary">Editar</a>
                                 </td>
                             </tr>
                         @endforeach

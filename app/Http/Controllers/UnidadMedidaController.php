@@ -50,9 +50,10 @@ class UnidadMedidaController extends Controller
      * @param  \App\UnidadMedida  $unidadMedida
      * @return \Illuminate\Http\Response
      */
-    public function show(UnidadMedida $unidadMedida)
+    public function show($id)
     {
-        //
+        $unidadMedida = UnidadMedida::find($id);
+        return view('unidadMedida.unidadMedidaEdit')->with('unidadMedida', $unidadMedida);
     }
 
     /**
@@ -73,9 +74,14 @@ class UnidadMedidaController extends Controller
      * @param  \App\UnidadMedida  $unidadMedida
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, UnidadMedida $unidadMedida)
+    public function update(Request $request, $id)
     {
-        //
+        $unidadMedida = UnidadMedida::find($id);
+        $unidadMedida->nombre = $request->nombre;
+        $unidadMedida->descripcion = $request->descripcion;
+        $unidadMedida->decimal = $request->decimal;
+        $unidadMedida->save();
+        return redirect()->route('unidadMedida.index');
     }
 
     /**

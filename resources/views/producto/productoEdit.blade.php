@@ -8,7 +8,7 @@
                     <p class="card-category">Completa los campos</p>
                 </div>
                 <div class="card-body">
-                    {!! Form::open(['route' => 'producto.store', 'method' => 'post']) !!}
+                    {!! Form::model($producto, ['route' => ['producto.update', $producto->id], 'method' => 'PUT']) !!}
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -63,7 +63,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                {!! Form::label('iva_costo', 'Escribe el iva costo') !!}
+                                {!! Form::label('iva_costo', 'Escribe iva el costo') !!}
                                 {!! Form::text('iva_costo', null, ['class'=>'form-control']) !!}
                             </div>
                         </div>

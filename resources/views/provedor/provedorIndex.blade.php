@@ -28,6 +28,9 @@
                         <th>
                             <b>Contacto</b>
                         </th>
+                        <th>
+                            <b>Editar</b>
+                        </th>
                         </thead>
                         <tbody>
                         @foreach($provedores as $provedor)
@@ -49,6 +52,9 @@
                                 </td>
                                 <td>
                                     {{$provedor->contacto}}
+                                </td>
+                                <td>
+                                    <a href="{{route('provedor.show', $provedor->id)}}" class="btn btn-primary">Editar</a>
                                 </td>
                             </tr>
                         @endforeach

@@ -53,9 +53,10 @@ class ProvedorController extends Controller
      * @param  \App\Provedor  $provedor
      * @return \Illuminate\Http\Response
      */
-    public function show(Provedor $provedor)
+    public function show($id)
     {
-        //
+        $provedor = Provedor::find($id);
+        return view('provedor.provedorEdit')->with('provedor', $provedor);
     }
 
     /**
@@ -76,9 +77,17 @@ class ProvedorController extends Controller
      * @param  \App\Provedor  $provedor
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Provedor $provedor)
+    public function update(Request $request, $id)
     {
-        //
+        $provedor = Provedor::find($id);
+        $provedor->nombre = $request->nombre;
+        $provedor->razon_social = $request->razon_social;
+        $provedor->rfc = $request->rfc;
+        $provedor->direccion = $request->direccion;
+        $provedor->telefono = $request->telefono;
+        $provedor->contacto = $request->contacto;
+        $provedor->save();
+        return redirect()->route('provedor.index');
     }
 
     /**

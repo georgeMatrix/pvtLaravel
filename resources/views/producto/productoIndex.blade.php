@@ -84,6 +84,9 @@
                         <th>
                             <b>unidadMedida</b>
                         </th>
+                        <th>
+                            <b>Editar</b>
+                        </th>
 
                         </thead>
                         <tbody>
@@ -163,7 +166,10 @@
                                     {{$producto->existencia}}
                                 </td>
                                 <td>
-                                    {{$unidad_Medida = \App\Categoria::find($producto->unidad_Medida)->nombre}}
+                                    {{$unidad_Medida = \App\UnidadMedida::find($producto->unidad_Medida)->nombre}}
+                                </td>
+                                <td>
+                                    <a href="{{route('producto.show', $producto->id)}}" class="btn btn-primary">Editar</a>
                                 </td>
                             </tr>
                         @endforeach
