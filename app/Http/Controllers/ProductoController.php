@@ -34,7 +34,7 @@ class ProductoController extends Controller
         $provedor = Provedor::pluck('nombre', 'id');
         $categoria = Categoria::pluck('nombre', 'id');
         $unidadMedida = UnidadMedida::pluck('nombre', 'id');
-        return view('producto/productoEdit')->with('provedor', $provedor)->with('categoria', $categoria)->with('unidadMedida', $unidadMedida);
+        return view('producto/productoCreate')->with('provedor', $provedor)->with('categoria', $categoria)->with('unidadMedida', $unidadMedida);
     }
 
     /**

@@ -25,7 +25,7 @@ class CategoriaController extends Controller
      */
     public function create()
     {
-        return view('categoria/categoriaEdit');
+        return view('categoria/categoriaCreate');
     }
 
     /**
@@ -73,9 +73,13 @@ class CategoriaController extends Controller
      * @param  \App\Categoria  $categoria
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Categoria $categoria)
+    public function update(Request $request, $id)
     {
-        //
+        $categoria = Categoria::find($id);
+        $categoria->nombre = $request->nombre;
+        $categoria->descripcion = $request->descripcion;
+        $categoria->save();
+        return redirect()->route('categoria.index');
     }
 
     /**

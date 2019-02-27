@@ -25,7 +25,7 @@ class ProvedorController extends Controller
      */
     public function create()
     {
-        return view('provedor/provedorEdit');
+        return view('provedor/provedorCreate');
     }
 
     /**

@@ -25,7 +25,7 @@ class UnidadMedidaController extends Controller
      */
     public function create()
     {
-        return view('unidadMedida/unidadMedidaEdit');
+        return view('unidadMedida/unidadMedidaCreate');
     }
 
     /**

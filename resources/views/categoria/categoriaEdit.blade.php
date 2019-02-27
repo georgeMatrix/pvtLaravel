@@ -23,7 +23,7 @@
                             </div>
                         </div>
                     </div>
-                    {!! Form::submit('Guardar', ['class' => 'btn btn-primary pull-right']) !!}
+                    {!! Form::submit('Actualizar', ['class' => 'btn btn-primary pull-right']) !!}
                     <div class="clearfix"></div>
                     {!! Form::close() !!}
                 </div>
