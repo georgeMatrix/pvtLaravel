@@ -39,6 +39,13 @@
                                 <td>
                                     <a href="{{route('unidadMedida.show', $unidadM->id)}}" class="btn btn-primary">Editar</a>
                                 </td>
+                                <td>
+                                    <form action="{{route('unidadMedida.destroy', $unidadM->id)}}" method="post">
+                                        {{csrf_field()}}
+                                        <input type="hidden" name="_method" value="DELETE">
+                                        <button class="btn btn-danger">Eliminar</button>
+                                    </form>
+                                </td>
                             </tr>
                         @endforeach
                         </tbody>

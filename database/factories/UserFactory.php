@@ -30,6 +30,7 @@ $factory->define(App\Provedor::class, function (Faker $faker) {
         'direccion' => $faker->address,
         'telefono' => $faker->phoneNumber,
         'contacto' => $faker->name,
+        'activo_inactivo' => 1,
     ];
 });
 
@@ -37,6 +38,7 @@ $factory->define(App\Categoria::class, function (Faker $faker) {
     return [
         'nombre' => $faker->name,
         'descripcion' => $faker->name,
+        'activo_inactivo' => 1,
     ];
 });
 
@@ -45,7 +47,7 @@ $factory->define(App\UnidadMedida::class, function (Faker $faker) {
     return [
         'nombre' => $faker->name,
         'descripcion' => $faker->name,
-        'decimal' => $faker->name,
+        'activo_inactivo' => 1,
     ];
 });
 
@@ -58,23 +60,24 @@ $factory->define(App\Producto::class, function (Faker $faker) {
         'categoria' => $faker -> biasedNumberBetween(1,5),
         'descripcion' => $faker -> name,
         'descripcionE' => $faker -> name,
-        'costo' => $faker -> name,
-        'iva_costo' => $faker -> name,
-        'ieps_costo' => $faker -> name,
-        'total_costo' => $faker -> name,
-        'precio_Mayoreo' => $faker -> name,
-        'iva_Precio_Mayoreo' => $faker -> name,
-        'ieps_Precio_Mayoreo' => $faker -> name,
-        'total_Precio_Mayoreo' => $faker -> name,
-        'precio_Medio_Mayoreo' => $faker -> name,
-        'iva_Precio_Medio_Mayoreo' => $faker -> name,
-        'ieps_Precio_Medio_Mayoreo' => $faker -> name,
-        'total_Precio_Medio_Mayoreo' => $faker -> name,
-        'precio_Retail' => $faker -> name,
-        'iva_Precio_Retail' => $faker -> name,
-        'ieps_Precio_Retail' => $faker -> name,
-        'total_Precio_Retail' => $faker -> name,
-        'existencia' => $faker -> name,
+        'costo' => $faker -> numberBetween(10,50),
+        'iva_costo' => $faker -> numberBetween(10,50),
+        'ieps_costo' => $faker -> numberBetween(10,50),
+        'total_costo' => $faker -> numberBetween(10,50),
+        'precio_Mayoreo' => $faker -> numberBetween(10,50),
+        'iva_Precio_Mayoreo' => $faker -> numberBetween(10,50),
+        'ieps_Precio_Mayoreo' => $faker -> numberBetween(10,50),
+        'total_Precio_Mayoreo' => $faker -> numberBetween(10,50),
+        'precio_Medio_Mayoreo' => $faker -> numberBetween(10,50),
+        'iva_Precio_Medio_Mayoreo' => $faker -> numberBetween(10,50),
+        'ieps_Precio_Medio_Mayoreo' => $faker -> numberBetween(10,50),
+        'total_Precio_Medio_Mayoreo' => $faker -> numberBetween(10,50),
+        'precio_Retail' => $faker -> numberBetween(10,50),
+        'iva_Precio_Retail' => $faker -> numberBetween(10,50),
+        'ieps_Precio_Retail' => $faker -> numberBetween(10,50),
+        'total_Precio_Retail' => $faker -> numberBetween(10,50),
+        'existencia' => $faker -> numberBetween(10,50),
         'unidad_Medida' => $faker -> biasedNumberBetween(1,5),
+        'activo_inactivo' => 1,
     ];
 });

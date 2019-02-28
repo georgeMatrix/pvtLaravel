@@ -87,6 +87,9 @@
                         <th>
                             <b>Editar</b>
                         </th>
+                        <th>
+                            <b>Eliminar</b>
+                        </th>
 
                         </thead>
                         <tbody>
@@ -102,10 +105,18 @@
                                     {{$producto->skuVnpk}}
                                 </td>
                                 <td>
-                                    {{$provedor = \App\Provedor::find($producto->provedor)->nombre}}
+                                    @if(is_null(\App\Provedor::find($producto->provedor)))
+                                        <p class="text-danger">Falta Valor</p>
+                                    @else
+                                        {{\App\Provedor::find($producto->provedor)->nombre}}
+                                    @endif
                                 </td>
                                 <td>
-                                    {{$categoria = \App\Categoria::find($producto->categoria)->nombre}}
+                                    @if(is_null(\App\Categoria::find($producto->categoria)))
+                                        <p class="text-danger">Falta Valor</p>
+                                    @else
+                                        {{\App\Categoria::find($producto->categoria)->nombre}}
+                                    @endif
                                 </td>
                                 <td>
                                     {{$producto->descripcion}}
@@ -166,10 +177,21 @@
                                     {{$producto->existencia}}
                                 </td>
                                 <td>
-                                    {{$unidad_Medida = \App\UnidadMedida::find($producto->unidad_Medida)->nombre}}
+                                    @if(is_null(\App\UnidadMedida::find($producto->unidad_Medida)))
+                                        <p class="text-danger">Falta Valor</p>
+                                    @else
+                                        {{\App\UnidadMedida::find($producto->unidad_Medida)->nombre}}
+                                    @endif
                                 </td>
                                 <td>
                                     <a href="{{route('producto.show', $producto->id)}}" class="btn btn-primary">Editar</a>
+                                </td>
+                                <td>
+                                    <form action="{{route('producto.destroy', $producto->id)}}" method="post">
+                                        {{csrf_field()}}
+                                        <input type="hidden" name="_method" value="DELETE">
+                                        <button class="btn btn-danger">Eliminar</button>
+                                    </form>
                                 </td>
                             </tr>
                         @endforeach

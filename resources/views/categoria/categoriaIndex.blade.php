@@ -19,6 +19,9 @@
                         <th>
                             <b>Editar</b>
                         </th>
+                        <th>
+                            <b>Eliminar</b>
+                        </th>
                         </thead>
                         <tbody>
                         @foreach($categorias as $categoria)
@@ -31,6 +34,13 @@
                             </td>
                             <td>
                                 <a href="{{route('categoria.show', $categoria->id)}}" class="btn btn-primary">Editar</a>
+                            </td>
+                            <td>
+                                <form action="{{route('categoria.destroy', $categoria->id)}}" method="post">
+                                    {{csrf_field()}}
+                                    <input type="hidden" name="_method" value="DELETE">
+                                    <button class="btn btn-danger">Eliminar</button>
+                                </form>
                             </td>
                         </tr>
                         @endforeach

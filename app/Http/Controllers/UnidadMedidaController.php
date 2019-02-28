@@ -80,6 +80,7 @@ class UnidadMedidaController extends Controller
         $unidadMedida->nombre = $request->nombre;
         $unidadMedida->descripcion = $request->descripcion;
         $unidadMedida->decimal = $request->decimal;
+        $unidadMedida->activo_inactivo = 1;
         $unidadMedida->save();
         return redirect()->route('unidadMedida.index');
     }
@@ -90,8 +91,10 @@ class UnidadMedidaController extends Controller
      * @param  \App\UnidadMedida  $unidadMedida
      * @return \Illuminate\Http\Response
      */
-    public function destroy(UnidadMedida $unidadMedida)
+    public function destroy($id)
     {
-        //
+        $unidadM = UnidadMedida::find($id);
+        $unidadM->delete();
+        return back();
     }
 }

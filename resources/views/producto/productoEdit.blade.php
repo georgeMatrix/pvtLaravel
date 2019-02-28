@@ -30,11 +30,13 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
+                                {!! Form::label('provedor', 'Escribe el provedor') !!}
                                 {!! Form::select('provedor', $provedor, null, ['class' => 'form-control', 'placeholder' => 'selecciona un provedor']) !!}
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
+                                {!! Form::label('categoria', 'Escribe el categoria') !!}
                                 {!! Form::select('categoria', $categoria, null, ['class' => 'form-control', 'placeholder' => 'selecciona un categoria']) !!}
                             </div>
                         </div>
@@ -46,6 +48,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
+                                {!! Form::label('unidad_Medida', 'Escribe el unidad medida') !!}
                                 {!! Form::select('unidad_Medida', $unidadMedida, null, ['class' => 'form-control', 'placeholder' => 'selecciona una unidad de medida']) !!}
                             </div>
                         </div>

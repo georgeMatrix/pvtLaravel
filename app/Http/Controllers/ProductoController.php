@@ -71,6 +71,7 @@ class ProductoController extends Controller
         $producto->total_Precio_Retail = $request->total_Precio_Retail;
         $producto->existencia = $request->existencia;
         $producto->unidad_Medida = $request->unidad_Medida;
+        $producto->activo_inactivo = 1;
         $producto->save();
         return redirect()->route('producto.index');
     }
@@ -146,8 +147,10 @@ class ProductoController extends Controller
      * @param  \App\Producto  $producto
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Producto $producto)
+    public function destroy($id)
     {
-        //
+        $producto = Producto::find($id);
+        $producto->delete();
+        return back();
     }
 }

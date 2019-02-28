@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Categoria;
+use App\Producto;
 use Illuminate\Http\Request;
 
 class CategoriaController extends Controller
@@ -39,6 +40,7 @@ class CategoriaController extends Controller
         $categoria = new Categoria();
         $categoria->nombre = $request->nombre;
         $categoria->descripcion = $request->descripcion;
+        $categoria->activo_inactivo = 1;
         $categoria->save();
         return redirect()->route('categoria.index');
     }
@@ -88,8 +90,10 @@ class CategoriaController extends Controller
      * @param  \App\Categoria  $categoria
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Categoria $categoria)
+    public function destroy($id)
     {
-        //
+        $categoria = Categoria::find($id);
+        $categoria->delete();
+        return back();
     }
 }

@@ -43,6 +43,7 @@ class ProvedorController extends Controller
         $provedor->direccion = $request->direccion;
         $provedor->telefono = $request->telefono;
         $provedor->contacto = $request->contacto;
+        $provedor->activo_inactivo = 1;
         $provedor->save();
         return redirect()->route('provedor.index');
     }
@@ -96,8 +97,10 @@ class ProvedorController extends Controller
      * @param  \App\Provedor  $provedor
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Provedor $provedor)
+    public function destroy($id)
     {
-        //
+        $provedor = Provedor::find($id);
+        $provedor->delete();
+        return back();
     }
 }

@@ -17,7 +17,7 @@ class CreateUnidadMedidasTable extends Migration
             $table->increments('id');
             $table->string('nombre');
             $table->string('descripcion');
-            $table->string('Decimal');
+            $table->unsignedInteger('activo_inactivo');
             $table->timestamps();
         });
     }
