@@ -17,8 +17,8 @@ Route::get('/', function () {
 
 Route::resource('inicio', 'InicioController');
 Route::resource('categoria', 'CategoriaController');
-Route::post('eliminarC', 'CategoriaController@eliminar');
 Route::resource('provedor', 'ProvedorController');
 Route::resource('unidadMedida', 'UnidadMedidaController');
 Route::resource('producto', 'ProductoController');
+Route::resource('venta', 'VentaController');
 
